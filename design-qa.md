@@ -1,60 +1,54 @@
-# Reference adaptation — design QA
+# Skills and Contact update — verification
 
 final result: passed
 
-## Evidence and comparison scope
+## Scope
 
-- Source visual truth: `/var/folders/z_/14_ks9592jg5j45f2d5lqlqh0000gn/T/codex-clipboard-9c474af7-7794-4747-89cc-156260877103.png` (2048 × 1280 pixels).
-- Source is a Dribbble presentation containing overlapping desktop page crops; browser chrome and presentation framing are not part of the requested website.
-- Content crop: `work/reference-content.jpg` (720 × 540, from source rectangle x=477, y=289, width=1093, height=819).
-- Implementation home capture: `outputs/portfolio-desktop.jpg` (1440 × 1000 pixels / CSS viewport, 1:1 density), home at scrollY=0.
-- Implementation skills capture: `outputs/portfolio-skills-desktop.jpg` (1280 × 720 pixels / CSS viewport, 1:1 density), Skills anchor.
-- Mobile captures: `outputs/portfolio-mobile.jpg` and `outputs/portfolio-education-mobile.jpg` (390 × 844 pixels / CSS viewport, 1:1 density).
-- Full-view normalized side-by-side comparison: `work/design-comparison.jpg`. Source content crop and implementation are shown together at 720 pixels wide each. This is a style/composition comparison, not a claim of pixel-identical viewport matching.
-- Focused Skills / Projects comparison: `work/design-comparison-skills.jpg`. Source right-hand content region and browser-rendered implementation appear in a single composite. Logo alignment, centered headings, dark surfaces, and cyan card tops are readable at this scale.
+Content and icon update plus the requested reference-inspired hero/About composition. The dark slate palette, Poppins typography, restrained turquoise accents and resume facts are retained.
 
-## Required fidelity surfaces
+## Skills
 
-- **Fonts and typography:** Poppins matches the reference's geometric sans-serif character. Compact 40px desktop hero, restrained 20px section headings, normal 16px body copy, and 14px readable technology labels. No cropped headings or overlapping characters at tested widths. The user's real descriptions are longer than the reference's sample text and reflow naturally.
-- **Spacing / layout rhythm:** Compact navigation; two-column hero; centered section headings; identity and biography columns; aligned technology grid; three project cards on desktop; two-column contact content. Small 3–4px radii and flat surfaces replace the previous large rounded profile card. Mobile uses a single content column and a four-column logo grid (two columns at 320px).
-- **Colors / tokens:** Flat slate #202833 background, #293340 panels, #5de1de accents, #f0f3f7 primary text and #b8c1cd secondary text. No gradients, heavy shadows, decorative scenery, or oversized marketing slogans. The reference's restrained turquoise palette and dark developer-portfolio tone are preserved.
-- **Image quality / fidelity:** Eight recognizable Devicon original brand assets are rasterized to 96×96 transparent PNGs and rendered uniformly at 32×32. White 48×48 wells make black GitHub details visible and keep all technologies aligned. AITU uses the actual white logo linked from the official university footer; original 132:70 ratio is preserved at 264×140 source pixels and 158.4×84 display pixels. Nine images total 24,676 bytes. No logo was generated, redrawn, recolored, cropped, or distorted. Each has alt text, dimensions and lazy decoding/loading.
-- **Copy / content:** Only Sanat's supplied identity, experience, education, courses, technologies and projects are used. Avicenna describes redesign/frontend contribution, without claiming system/API/patient-data/role implementation. Internship remains completed; unknown end date remains explicit. Unknown profile/repository/demo URLs remain labeled placeholders.
+Exactly six items, in the requested order: React, Go, Java, TypeScript, Figma, Angular. The old extra technology cards and Backend/Foundations text were removed from Skills. All six recognizable brand PNGs load and render at 32×32 in identical 48×48 wells, with visible 14px names and logo alt text. Angular uses the current Devicon original source. The desktop grid has six columns; mobile has three, and the narrowest 320px layout has two. Historical project descriptions retain the user's supplied project technologies.
 
-## Intentional adaptations
+## Contacts
 
-- No borrowed portrait, third-party name or personal information is copied. The reference's personal portrait/illustration and pixel scenery are omitted in favour of a clean text-led layout, matching the user's request for minimalism and avoiding fictitious personal assets.
-- No skill proficiency meters are invented. The requested eight technologies replace the reference's four unrelated technologies.
-- Education, courses and internship are included because they are required by Sanat's brief; the source mockup does not show these sections.
-- Real project screenshot slots remain clearly marked because the user requested places to add screenshots and supplied none.
+All six rendered link destinations were inspected after JavaScript execution and match the user-provided strings:
 
-## Findings and comparison history
+| Contact | href | target / rel |
+|---|---|---|
+| Phone | tel:+77762700967 | same context / no external-profile attributes |
+| Email | mailto:bogenbaevsanat07@gmail.com | same context / no external-profile attributes |
+| Telegram | https://t.me/jrdsta | _blank / noopener noreferrer |
+| LinkedIn | https://www.linkedin.com/in/bogenbaevjr/ | _blank / noopener noreferrer |
+| GitHub | https://github.com/juniorqazaq | _blank / noopener noreferrer |
+| Instagram | https://www.instagram.com/bogenbaevjr/ | _blank / noopener noreferrer |
 
-- Initial full-view and focused comparisons found no actionable P0/P1 layout or style mismatch within the requested adaptation scope.
-- [P2, fixed] Mobile skill labels were initially 12px. Increased them to 14px, also raising compact brand text to 14px. Recaptured `portfolio-mobile.jpg`; TypeScript and all other labels fit their columns. No horizontal overflow at 320, 390 or 768px after the correction.
-- Anchor transitions were simplified to immediate navigation; only a short opacity reveal remains. This avoids excessive motion and keeps navigation responsive. Reduced-motion preferences disable the reveal.
-- Final mobile Education capture confirms the AITU logo is readable, proportionate and fully loaded, with no clipping of course details.
+Usernames are preserved exactly. Every mailto action, including About and the Contact Me button, uses the new email address. Profile settings update hrefs without replacing icon/label markup.
 
-## Functional / responsive checks
+The six source-derived contact icons use one turquoise color, display at 24×24 in 32×32 boxes, and align beside visible service labels and exact contact text. Icons are decorative to assistive technology; descriptive link text remains available. No AI-generated logos or guessed URLs were added.
 
-- Logo network and rendered image checks: all eight skill PNGs loaded, each 32×32; AITU loaded at original 264×140 dimensions.
-- Mobile menu expands, exposes all navigation links, and closes on section selection. Existing Escape handler restores focus to the menu button.
-- Home, Skills and Education anchors were exercised; active navigation updates with the viewed section.
-- Rendered widths checked: 320, 390, 768 and 1440px; document width equals viewport width (no horizontal overflow). Desktop Skills captured in an isolated 1280px preview.
-- Local browser error log: no console errors.
-- Semantic headings, skip link, visible focus outlines, alt text, email/phone links and reduced-motion rule retained.
-- JavaScript syntax, internal anchors and local asset references verified.
+## Latest hero and About changes
 
-## Remaining scope
+The supplied close-up reference was reviewed beside the implementation: text and actions on the left, isolated isometric programmer on the right; About uses a lighter flat slate surface, a circular turquoise portrait frame on the left and biography on the right. The original developer illustration has correctly spelled React, Go and Java text cards. The actual supplied portrait is used without changing facial features. Email, GitHub and LinkedIn icon links sit below the user's name, role and location.
 
-- No mobile source mockup was supplied, so mobile is verified as a responsive adaptation rather than a 1:1 source clone.
-- Profile URLs, demo URLs, project screenshots and the internship end date remain pending user-provided facts.
+Both WebP images load at the intended sizes: 360×360 hero and 140×140 inner portrait on desktop; the hero becomes 265×265 below the text on mobile. Explicit image dimensions reserve space, useful alt text is present, and the portrait uses lazy loading. The two optimized assets total 73,192 bytes.
 
-## Implementation checklist
+Latest rendered checks passed at 1280×1100, 390×844 and 320×760: no horizontal overflow, image proportions preserved, menu expands and closes on navigation, no browser errors. Screenshot evidence: `../portfolio-hero-about.jpg`, `../portfolio-mobile.jpg`, `../about-updated.jpg`. The requested six Skills items remain exact. Existing Contact verification below remains valid because its links and icons were not modified by the hero/About change.
 
-- [x] Reference-inspired compact dark composition.
-- [x] Eight genuine recognizable technology PNGs, readable labels and consistent geometry.
-- [x] Official AITU logo with intact proportions.
-- [x] Mobile navigation and reflow; no overflow at tested widths.
-- [x] No invented facts or URLs; no AI-generated logos.
-- [x] Required comparison evidence and post-fix capture.
+## Browser evidence
+
+- `../contact-updated.jpg`: local browser-rendered Contact at 1280×800, showing all six entries and the surrounding portfolio.
+- Skills browser view inspected at 390×844: all six logos loaded, all names visible, and menu closed after selection.
+- Browser DOM measurements: no horizontal overflow at 320px, 390px and 825px; 1280px desktop screenshot shows a two-column Contact grid without clipping.
+- Contact image measurements: all six loaded at 24×24. Skill image measurements: all six loaded at 32×32.
+- Mobile menu expands and closes on link selection. Active navigation and focus styles remain intact.
+- Browser error log: empty.
+- JS/config syntax and the exact contact href/target/rel strings verified.
+
+## Remote availability check
+
+- GitHub public profile at https://github.com/juniorqazaq loaded successfully.
+- LinkedIn automated fetch returned HTTP 999; Instagram fetch was throttled; Telegram was not accessible through the read tool. These are verification limits, not proof that the supplied links are invalid. All three exact user-provided URLs remain unchanged.
+- tel/mailto destination strings were checked without initiating a phone call or composing/sending mail. No external profile ownership or email-delivery claim is made.
+
+No actionable layout or interaction issues remain within this update.
