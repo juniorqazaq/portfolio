@@ -1,0 +1,15 @@
+const menu = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('#navigation');
+function closeMenu(){navigation.classList.remove('open');menu.setAttribute('aria-expanded','false');}
+menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));navigation.classList.toggle('open',open);});
+navigation.addEventListener('click',event=>{if(event.target.closest('a'))closeMenu();});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&navigation.classList.contains('open')){closeMenu();menu.focus();}});
+matchMedia('(min-width: 761px)').addEventListener('change',event=>{if(event.matches)closeMenu();});
+const config=window.PORTFOLIO||{};
+function verifiedUrl(value){try{const url=new URL(value);return ['https:','http:'].includes(url.protocol)?url.href:null;}catch{return null;}}
+function replaceWithLink(element,url,label,className){const href=verifiedUrl(url);if(!element||!href)return;const link=document.createElement('a');link.href=href;link.textContent=label;link.className=className||'';link.target='_blank';link.rel='noopener noreferrer';element.replaceWith(link);}
+if(config.internshipEndDate)document.querySelector('[data-internship-end]').textContent=config.internshipEndDate;
+replaceWithLink(document.querySelector('[data-github-profile]'),config.githubUrl,'GitHub','contact-social');
+replaceWithLink(document.querySelector('[data-linkedin-profile]'),config.linkedinUrl,'LinkedIn','contact-social');
+document.querySelectorAll('[data-project]').forEach(card=>{const project=config.projects?.[card.dataset.project];if(!project)return;replaceWithLink(card.querySelector('[data-source-link]'),project.githubUrl,'GitHub');replaceWithLink(card.querySelector('[data-demo-link]'),project.demoUrl,'Live demo');if(project.screenshot){const img=document.createElement('img');img.src=project.screenshot;img.alt=project.screenshotAlt||'Project screenshot';img.loading='lazy';img.className='project-screenshot';img.addEventListener('error',()=>img.remove());card.querySelector('.project-visual').append(img);}});
+if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove('waiting');observer.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll('.reveal').forEach(element=>{element.classList.add('waiting');observer.observe(element);});}
