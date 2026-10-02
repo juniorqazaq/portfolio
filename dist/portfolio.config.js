@@ -2,7 +2,7 @@
    Screenshots: put your image in dist/images/ and use "images/your-file.webp".
    After editing, publish the updated site to apply your changes online. */
 window.PORTFOLIO = {
-  internshipEndDate: '', // e.g. "Jun 2025" — use the actual month and year.
+  internshipEndDate: 'Jul 2026', // Actual internship end date supplied by Sanat.
   githubUrl: 'https://github.com/juniorqazaq',
   linkedinUrl: 'https://www.linkedin.com/in/bogenbaevjr/',
   projects: {

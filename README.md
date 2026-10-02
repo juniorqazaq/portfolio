@@ -6,7 +6,7 @@ A fast, responsive, English-language static portfolio. No framework or build ste
 
 Edit `dist/portfolio.config.js`:
 
-- `internshipEndDate`: actual end month and year. Until supplied, the site clearly shows an end-date placeholder and “Completed internship”.
+- `internshipEndDate`: currently `Jul 2026`, as supplied by Sanat. The internship date range is Apr 2026 – Jul 2026, and its status is “Completed internship”.
 - `githubUrl` and `linkedinUrl`: the supplied real GitHub and LinkedIn profile URLs. Editing these values updates their contact links without removing icons or labels.
 - Project `githubUrl` and `demoUrl`: real repository and live-demo URLs.
 - Project `screenshot`: put an image in `dist/images/`, then enter its relative path, such as `images/avicenna.webp`. Set `screenshotAlt` to describe the actual image. Missing or invalid images leave the screenshot placeholder visible.

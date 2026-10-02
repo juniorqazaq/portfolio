@@ -56,3 +56,7 @@ No actionable layout or interaction issues remain within this update.
 ## Latest text correction
 
 About Me now uses the exact user-supplied English paragraph, including its contractions. The experience employer is Cushpen Group. No old Cushpe Group spelling remains in the site. Layout, assets, Skills, Contact links and internship completion status are retained.
+
+## Internship date correction
+
+The user-supplied internship date range is Apr 2026 – Jul 2026. HTML and configuration both use Jul 2026 as the end date, and the HTML start date is Apr 2026. Completed internship status remains. No date placeholder remains in the visible experience content.
