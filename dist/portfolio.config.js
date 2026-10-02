@@ -6,7 +6,7 @@ window.PORTFOLIO = {
   githubUrl: 'https://github.com/juniorqazaq',
   linkedinUrl: 'https://www.linkedin.com/in/bogenbaevjr/',
   projects: {
-    avicenna: { screenshot: '', screenshotAlt: 'Avicenna 2.0 frontend project screenshot', githubUrl: '', demoUrl: '' },
+    myTicket: { screenshot: '', screenshotAlt: 'My Ticket digital ticket studio screenshot', githubUrl: 'https://github.com/juniorqazaq/my-ticket', demoUrl: 'https://my-ticket-two.vercel.app' },
     zaman: { screenshot: '', screenshotAlt: 'Zaman AI project screenshot', githubUrl: '', demoUrl: '' },
     premierLeague: { screenshot: '', screenshotAlt: 'English Premier League Information System project screenshot', githubUrl: '', demoUrl: '' }
   }
